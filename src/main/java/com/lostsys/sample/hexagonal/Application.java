@@ -13,13 +13,13 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-    }    
-   
+    }
+
     @Bean
-    public RedisTemplate<String, String> redisTemplate( RedisConnectionFactory connectionFactory ) {
+    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory connectionFactory) {
         RedisTemplate<String, String> template = new RedisTemplate<>();
-        template.setConnectionFactory( connectionFactory );
+        template.setConnectionFactory(connectionFactory);
         return template;
-    }    
+    }
 
 }

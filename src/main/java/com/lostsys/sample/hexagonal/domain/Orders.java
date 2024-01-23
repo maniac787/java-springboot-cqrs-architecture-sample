@@ -1,10 +1,10 @@
 package com.lostsys.sample.hexagonal.domain;
 
-import java.math.BigDecimal;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Builder
 @Getter

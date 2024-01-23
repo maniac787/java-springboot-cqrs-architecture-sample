@@ -1,9 +1,9 @@
 package com.lostsys.sample.hexagonal.infra.inputport;
 
-import java.math.BigDecimal;
-
 import com.lostsys.sample.hexagonal.domain.Orders;
 
+import java.math.BigDecimal;
+
 public interface OrderInputPort {
-    public Orders createOrder( String customerId, BigDecimal total );
+    Orders createOrder(String customerId, BigDecimal total);
 }

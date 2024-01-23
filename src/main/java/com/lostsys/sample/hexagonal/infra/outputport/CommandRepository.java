@@ -4,10 +4,9 @@ import java.util.List;
 
 public interface CommandRepository {
 
-    public <T> T save( T reg );
+    <T> T save(T reg);
 
-    public <T> T getById( String id, Class<T> clazz );
+    <T> T getById(String id, Class<T> clazz);
 
-    public <T> List<T> getAll( Class<T> clazz );
-    
+    <T> List<T> getAll(Class<T> clazz);
 }

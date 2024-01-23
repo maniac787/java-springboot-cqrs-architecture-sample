@@ -1,14 +1,13 @@
 package com.lostsys.sample.hexagonal.application;
 
-import java.math.BigDecimal;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.lostsys.sample.hexagonal.domain.Orders;
 import com.lostsys.sample.hexagonal.infra.inputport.OrderInputPort;
 import com.lostsys.sample.hexagonal.infra.outputport.CommandRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
+import java.util.UUID;
 
 @Component
 public class OrderUserCase implements OrderInputPort {
@@ -19,12 +18,12 @@ public class OrderUserCase implements OrderInputPort {
     @Override
     public Orders createOrder(String customerId, BigDecimal total) {
         Orders order = Orders.builder()
-            .id( UUID.randomUUID().toString() )
-            .customerId( customerId )
-            .total( total )
-            .build();
+                .id(UUID.randomUUID().toString())
+                .customerId(customerId)
+                .total(total)
+                .build();
 
-        return entityRepository.save( order );
+        return entityRepository.save(order);
     }
-    
+
 }
