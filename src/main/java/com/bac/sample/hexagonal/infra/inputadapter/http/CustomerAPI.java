@@ -6,6 +6,7 @@ import com.bac.sample.hexagonal.infra.inputport.CustomerInputPort;
 import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,17 +41,17 @@ public class CustomerAPI {
         return customerInputPort.getById(customerId);
     }
 
-    @PostMapping(value = "getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "getall", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Customer> getAll() {
         return customerInputPort.getAll();
     }
 
-    @PostMapping(value = "getallCustomerCQRS", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "getallCustomerCQRS", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Map<String, Object>> getallCQRS() {
         return messageBrokerInputPort.getAll("customer");
     }
 
-    @PostMapping(value = "getallCustomerNormal", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "getallCustomerNormal", produces = MediaType.APPLICATION_JSON_VALUE)
     public List getallCustomerNormal() {
         return jdbcTemplate.queryForList("SELECT *, (SELECT array_to_json(array_agg(row_to_json(t))) FROM (SELECT row_to_json(o) FROM Orders o WHERE o.customerId=c.id) t) AS orders FROM Customer c;");
     }
