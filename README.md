@@ -24,3 +24,6 @@ curl -X POST -H "Accept:application/json" -H "Content-Type:application/json" loc
 ## Conectarse al Kafka
 
 kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic dbserver1.public.customer --from-beginning
+
+[Docker to compose](https://www.composerize.com/)
+

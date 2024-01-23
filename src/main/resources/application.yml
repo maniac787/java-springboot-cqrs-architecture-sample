@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgresdb
+    username: ${DB_USERNAME}
+    password: ${DB_PASS}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: true
+
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: SUPER_SECRET_PASSWORD
+
+  kafka:
+    consumer:
+      bootstrap-servers: 127.0.0.1:29092
+
+springdoc:
+  api-docs:
+    enabled: ${USE_SWAGGER:false}
+    path: /api-docs
+
+logging:
+  level:
+    com.bac.sample: DEBUG
+    org.springframework.web: ERROR
