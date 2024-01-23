@@ -4,7 +4,6 @@ import com.bac.sample.hexagonal.domain.Customer;
 import com.bac.sample.hexagonal.domain.Orders;
 import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
 import com.bac.sample.hexagonal.infra.outputport.QueryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,13 +12,16 @@ import java.util.Map;
 @Component
 public class MessageBrokerUseCase implements MessageBrokerInputPort {
 
-    @Autowired
-    QueryRepository queryRepository;
+    final QueryRepository queryRepository;
 
     Map<String, Class<?>> classes = Map.of(
             "customer", Customer.class,
             "orders", Orders.class
     );
+
+    public MessageBrokerUseCase(QueryRepository queryRepository) {
+        this.queryRepository = queryRepository;
+    }
 
     @Override
     public void deleteReg(String table, Map<String, Object> reg) {

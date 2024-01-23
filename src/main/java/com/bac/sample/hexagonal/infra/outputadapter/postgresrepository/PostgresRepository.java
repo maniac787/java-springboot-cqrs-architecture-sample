@@ -1,7 +1,6 @@
 package com.bac.sample.hexagonal.infra.outputadapter.postgresrepository;
 
 import com.bac.sample.hexagonal.infra.outputport.CommandRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -17,8 +16,11 @@ import java.util.List;
 @Component
 public class PostgresRepository implements CommandRepository {
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    final JdbcTemplate jdbcTemplate;
+
+    public PostgresRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public <T> T save(T reg) {

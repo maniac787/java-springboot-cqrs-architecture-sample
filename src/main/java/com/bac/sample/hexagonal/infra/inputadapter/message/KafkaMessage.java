@@ -2,7 +2,6 @@ package com.bac.sample.hexagonal.infra.inputadapter.message;
 
 import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
 import com.bac.sample.hexagonal.infra.utils.ConversionUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
@@ -12,8 +11,11 @@ import java.util.Map;
 @Service
 public class KafkaMessage {
 
-    @Autowired
-    MessageBrokerInputPort messageBrokerInputPort;
+    final MessageBrokerInputPort messageBrokerInputPort;
+
+    public KafkaMessage(MessageBrokerInputPort messageBrokerInputPort) {
+        this.messageBrokerInputPort = messageBrokerInputPort;
+    }
 
     @KafkaListener(topicPattern = "dbserver1.public.*", groupId = "group1")
     public void consumeEvent(@Payload(required = false) String eventMsg) {

@@ -3,7 +3,6 @@ package com.bac.sample.hexagonal.application;
 import com.bac.sample.hexagonal.domain.Customer;
 import com.bac.sample.hexagonal.infra.inputport.CustomerInputPort;
 import com.bac.sample.hexagonal.infra.outputport.CommandRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.UUID;
 @Component
 public class CustomerUseCase implements CustomerInputPort {
 
-    @Autowired
-    CommandRepository entityRepository;
+    final CommandRepository entityRepository;
+
+    public CustomerUseCase(CommandRepository entityRepository) {
+        this.entityRepository = entityRepository;
+    }
 
     @Override
     public Customer createCustomer(String name, String country) {

@@ -4,7 +4,6 @@ package com.bac.sample.hexagonal.infra.inputadapter.http;
 import com.bac.sample.hexagonal.domain.Customer;
 import com.bac.sample.hexagonal.infra.inputport.CustomerInputPort;
 import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,14 +18,17 @@ import java.util.Map;
 @RequestMapping(value = "customer")
 public class CustomerAPI {
 
-    @Autowired
-    CustomerInputPort customerInputPort;
+    final CustomerInputPort customerInputPort;
 
-    @Autowired
-    MessageBrokerInputPort messageBrokerInputPort;
+    final MessageBrokerInputPort messageBrokerInputPort;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    final JdbcTemplate jdbcTemplate;
+
+    public CustomerAPI(CustomerInputPort customerInputPort, MessageBrokerInputPort messageBrokerInputPort, JdbcTemplate jdbcTemplate) {
+        this.customerInputPort = customerInputPort;
+        this.messageBrokerInputPort = messageBrokerInputPort;
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @PostMapping(value = "create", produces = MediaType.APPLICATION_JSON_VALUE)
     public Customer create(@RequestParam(value = "name") String name, @RequestParam(value = "country") String country) {
