@@ -1,4 +1,4 @@
-package com.bac.sample.hexagonal.infra.inputadapter.http;
+package com.bac.sample.hexagonal.infra.input.adapter.http;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bac.sample.hexagonal.domain.Orders;
-import com.bac.sample.hexagonal.infra.inputport.OrderInputPort;
+import com.bac.sample.hexagonal.infra.input.port.OrderInputPort;
 
 @RestController
 @RequestMapping(value = "order")

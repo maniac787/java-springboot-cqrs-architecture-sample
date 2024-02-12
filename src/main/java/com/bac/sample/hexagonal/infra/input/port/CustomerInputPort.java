@@ -1,4 +1,4 @@
-package com.bac.sample.hexagonal.infra.inputport;
+package com.bac.sample.hexagonal.infra.input.port;
 
 import com.bac.sample.hexagonal.domain.Customer;
 

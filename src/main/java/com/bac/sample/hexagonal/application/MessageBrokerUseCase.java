@@ -2,8 +2,8 @@ package com.bac.sample.hexagonal.application;
 
 import com.bac.sample.hexagonal.domain.Customer;
 import com.bac.sample.hexagonal.domain.Orders;
-import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
-import com.bac.sample.hexagonal.infra.outputport.QueryRepository;
+import com.bac.sample.hexagonal.infra.input.port.MessageBrokerInputPort;
+import com.bac.sample.hexagonal.infra.output.port.QueryRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

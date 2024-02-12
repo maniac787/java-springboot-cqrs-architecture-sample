@@ -1,8 +1,8 @@
-package com.bac.sample.hexagonal.infra.outputadapter.redisrepository;
+package com.bac.sample.hexagonal.infra.output.adapter.redisrepository;
 
 import com.bac.sample.hexagonal.domain.Customer;
 import com.bac.sample.hexagonal.domain.Orders;
-import com.bac.sample.hexagonal.infra.outputport.QueryRepository;
+import com.bac.sample.hexagonal.infra.output.port.QueryRepository;
 import com.bac.sample.hexagonal.infra.utils.ConversionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

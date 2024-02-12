@@ -1,6 +1,6 @@
-package com.bac.sample.hexagonal.infra.outputadapter.postgresrepository;
+package com.bac.sample.hexagonal.infra.output.adapter.postgresrepository;
 
-import com.bac.sample.hexagonal.infra.outputport.CommandRepository;
+import com.bac.sample.hexagonal.infra.output.port.CommandRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

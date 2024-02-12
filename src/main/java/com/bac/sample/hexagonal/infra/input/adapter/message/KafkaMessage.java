@@ -1,6 +1,6 @@
-package com.bac.sample.hexagonal.infra.inputadapter.message;
+package com.bac.sample.hexagonal.infra.input.adapter.message;
 
-import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
+import com.bac.sample.hexagonal.infra.input.port.MessageBrokerInputPort;
 import com.bac.sample.hexagonal.infra.utils.ConversionUtils;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;

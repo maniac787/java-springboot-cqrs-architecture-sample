@@ -1,8 +1,8 @@
 package com.bac.sample.hexagonal.application;
 
 import com.bac.sample.hexagonal.domain.Orders;
-import com.bac.sample.hexagonal.infra.inputport.OrderInputPort;
-import com.bac.sample.hexagonal.infra.outputport.CommandRepository;
+import com.bac.sample.hexagonal.infra.input.port.OrderInputPort;
+import com.bac.sample.hexagonal.infra.output.port.CommandRepository;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

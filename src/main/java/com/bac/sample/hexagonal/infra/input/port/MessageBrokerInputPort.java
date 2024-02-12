@@ -1,4 +1,4 @@
-package com.bac.sample.hexagonal.infra.inputport;
+package com.bac.sample.hexagonal.infra.input.port;
 
 import java.util.List;
 import java.util.Map;

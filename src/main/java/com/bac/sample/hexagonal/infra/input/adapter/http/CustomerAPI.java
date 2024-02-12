@@ -1,9 +1,9 @@
-package com.bac.sample.hexagonal.infra.inputadapter.http;
+package com.bac.sample.hexagonal.infra.input.adapter.http;
 
 
 import com.bac.sample.hexagonal.domain.Customer;
-import com.bac.sample.hexagonal.infra.inputport.CustomerInputPort;
-import com.bac.sample.hexagonal.infra.inputport.MessageBrokerInputPort;
+import com.bac.sample.hexagonal.infra.input.port.CustomerInputPort;
+import com.bac.sample.hexagonal.infra.input.port.MessageBrokerInputPort;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PostMapping;

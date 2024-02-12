@@ -3,12 +3,11 @@ package com.bac.sample.hexagonal.application;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bac.sample.hexagonal.domain.Customer;
-import com.bac.sample.hexagonal.infra.inputport.CustomerInputPort;
-import com.bac.sample.hexagonal.infra.outputport.CommandRepository;
+import com.bac.sample.hexagonal.infra.input.port.CustomerInputPort;
+import com.bac.sample.hexagonal.infra.output.port.CommandRepository;
 
 @Component
 public class CustomerUseCase implements CustomerInputPort {
