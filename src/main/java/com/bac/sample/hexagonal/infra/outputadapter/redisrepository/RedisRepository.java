@@ -19,6 +19,7 @@ public class RedisRepository implements QueryRepository {
     @Autowired
     RedisTemplate<String, String> redisTemplate;
 
+
     @Override
     public void save(Map<String, Object> reg, Class<?> clazz) {
         redisTemplate.opsForHash().put(

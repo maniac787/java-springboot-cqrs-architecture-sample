@@ -11,7 +11,8 @@ import java.util.Map;
 @Service
 public class KafkaMessage {
 
-    final MessageBrokerInputPort messageBrokerInputPort;
+    final
+    MessageBrokerInputPort messageBrokerInputPort;
 
     public KafkaMessage(MessageBrokerInputPort messageBrokerInputPort) {
         this.messageBrokerInputPort = messageBrokerInputPort;
@@ -19,9 +20,7 @@ public class KafkaMessage {
 
     @KafkaListener(topicPattern = "dbserver1.public.*", groupId = "group1")
     public void consumeEvent(@Payload(required = false) String eventMsg) {
-        if (eventMsg == null) {
-            return;
-        }
+        if (eventMsg == null) return;
 
         Map<String, Object> event = ConversionUtils.jsonstring2Map(eventMsg);
 
